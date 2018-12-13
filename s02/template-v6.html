@@ -1,0 +1,34 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <!--
+    v-once impede o re-render, ou seja, faz com que a propriedade
+    titulo só seja lida uma vez
+  -->
+  <p v-once>{{ titulo }}</p>
+  <p>{{ saudacao() }}</p>
+  <a v-bind:href="link">google com v-bind</a>
+  <p>{{ linkHtml }}</p>
+  <!--
+    Isso é interessante quando usado um editor rico, ou seja, no
+    banco de dados será salvo uma string com a sintaxe de html
+  -->
+  <p v-html="linkHtml"></p>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      titulo: "olá mundo!",
+      link: "https://www.google.com/",
+      linkHtml: '<a href="https://facebook.com">facebook</a>'
+    },
+    methods: {
+      saudacao() {
+        this.titulo = "Bom dia";
+        return this.titulo + "!";
+      }
+    }
+  });
+</script>
