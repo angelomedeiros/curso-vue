@@ -1,0 +1,29 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <p>{{ contador }}</p>
+  <button v-on:click="somarDois">Somar 2</button>
+  <button @click="somarUm">Somar 1</button>
+  <button @click="somar(5, $event)">Somar 5</button>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      contador: 0
+    },
+    methods: {
+      somarUm() {
+        this.contador++;
+      },
+      somarDois() {
+        this.contador += 2;
+      },
+      somar(passo, e) {
+        console.log(passo, e); // e = undefined se não passar o parâmetro $event na chamada do método
+        this.contador += passo;
+      }
+    }
+  });
+</script>
