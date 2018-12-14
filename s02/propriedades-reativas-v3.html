@@ -1,0 +1,43 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <button @click="contador++">Aumentar</button>
+  <button @click="contador2++">Aumentar 2</button>
+  <button @click="contador--">Diminuir</button>
+  <p>Contador {{ contador }} | {{ contador2 }}</p>
+  <p>Resultado: {{ resultado }}</p>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      contador: 0,
+      contador2: 0
+    },
+    computed: {
+      // O retorno deve ser algo sincrono
+      resultado() {
+        console.log("Chamou");
+        return this.contador % 2 ? "Ímpar" : "Par";
+      }
+    },
+    watch: {
+      /* A propriedade watch monitora um elemento, onde receve o novoValor e o
+       * antigo
+       */
+      contador(novoValor, antigoValor) {
+        console.log(novoValor, antigoValor);
+        setTimeout(() => {
+          this.contador = 0;
+        }, 2000);
+      }
+    },
+    methods: {
+      // resultado() {
+      //   console.log("Chamou");
+      //   return this.contador % 2 ? "Ímpar" : "Par";
+      // }
+    }
+  });
+</script>
