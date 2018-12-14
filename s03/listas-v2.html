@@ -1,0 +1,21 @@
+<meta charset="urf-8" />
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+  <ul>
+    <li v-for="(cor, i) in cores">{{ cor }} - {{ i }}</li>
+  </ul>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      cores: ["vermelho", "verde", "amarelo", "azul"],
+      pessoas: [
+        { nome: "Thalita", idade: 22, peso: 54 },
+        { nome: "Beatryz", idade: 23, peso: 58 }
+      ]
+    }
+  });
+</script>
