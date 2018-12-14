@@ -16,6 +16,7 @@
       contador2: 0
     },
     computed: {
+      // O retorno deve ser algo sincrono
       resultado() {
         console.log("Chamou");
         return this.contador % 2 ? "Ímpar" : "Par";
