@@ -1,0 +1,63 @@
+<script src="https://unpkg.com/vue"></script>
+
+<style>
+  .caixas {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .demo {
+    background-color: aqua;
+    width: 100px;
+    height: 100px;
+  }
+
+  .c1 {
+    background-color: red;
+  }
+
+  .c2 {
+    background-color: rebeccapurple;
+  }
+
+  .c3 {
+    background-color: sienna;
+  }
+
+  .girar {
+    transform: rotate(45deg);
+  }
+</style>
+
+<div id="app">
+  <div class="caixas">
+    <div class="demo" @click="aplicarC1 = !aplicarC1" :class="estilo1"></div>
+    <div class="demo"></div>
+    <div class="demo" :class="classCss"></div>
+    <!--
+      Pode ser passado um array, mas lembrar de passar em string quando
+      for aplicar diretamente uma class. Além disso, ainda é possivel usar a sintaxe { class: boolean }
+    -->
+    <div class="demo" :class="[classCss, 'girar']"></div>
+  </div>
+  <hr />
+  <input type="text" v-model="classCss" />
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      aplicarC1: false,
+      classCss: "c2"
+    },
+    computed: {
+      estilo1() {
+        return {
+          c1: this.aplicarC1,
+          c3: !this.aplicarC1
+        };
+      }
+    }
+  });
+</script>
