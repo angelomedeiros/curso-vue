@@ -1,0 +1,31 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <button @click="contador++">Aumentar</button>
+  <button @click="contador2++">Aumentar 2</button>
+  <button @click="contador--">Diminuir</button>
+  <p>Contador {{ contador }} | {{ contador2 }}</p>
+  <p>Resultado: {{ resultado }}</p>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      contador: 0,
+      contador2: 0
+    },
+    computed: {
+      resultado() {
+        console.log("Chamou");
+        return this.contador % 2 ? "Ímpar" : "Par";
+      }
+    },
+    methods: {
+      // resultado() {
+      //   console.log("Chamou");
+      //   return this.contador % 2 ? "Ímpar" : "Par";
+      // }
+    }
+  });
+</script>
