@@ -1,0 +1,41 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <p v-on:mousemove="mouse">
+    Mouse: {{ x }} e {{ y }} <span @mousemove="parar">parar aqui</span>
+  </p>
+  <p v-on:mousemove="mouse">
+    <!-- Usando o modificados de acesso .stop -->
+    Mouse: {{ x }} e {{ y }} <span @mousemove.stop>parar aqui</span>
+  </p>
+  <!-- Usando o modificados de acesso .prevent -->
+  <a @click.prevent href="http://instagram.com" target="_blank">instagram</a>
+  <hr />
+  <input type="text" v-on:keyup="exibirAlerta" />
+  <!-- Só exibir o alerta quando o usuário apertar enter -->
+  <input type="text" v-on:keyup.enter="exibirAlerta" value="enter" />
+  <input type="text" v-on:keyup.enter.alt="exibirAlerta" value="enter + alt" />
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      x: 0,
+      y: 0
+    },
+    methods: {
+      mouse(e) {
+        this.x = e.clientX;
+        this.y = e.clientY;
+      },
+      parar(e) {
+        e.stopPropagation();
+      },
+      exibirAlerta(e) {
+        console.log(e);
+        alert("Estou te alertando");
+      }
+    }
+  });
+</script>
