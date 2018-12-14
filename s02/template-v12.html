@@ -1,0 +1,25 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <p>{{ contador * 2 }}</p>
+  <p>{{ contador }} {{ contador % 2 ? "ímpar" : "par" }}</p>
+  <button v-on:click="somar">Somar 1</button>
+  <input type="number" v-on:change="alterarValor" />
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      contador: 0
+    },
+    methods: {
+      somar() {
+        this.contador++;
+      },
+      alterarValor(e) {
+        this.contador = e.target.value;
+      }
+    }
+  });
+</script>
