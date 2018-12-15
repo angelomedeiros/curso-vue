@@ -41,10 +41,10 @@
           <button class="btn attack">Ataque</button>
           <button class="btn special-attack">Ataque especial</button>
           <button class="btn heal">Curar</button>
-          <button class="btn give-up">Desistir</button>
+          <button class="btn give-up" @click="running = false">Desistir</button>
         </template>
         <template v-else>
-          <button class="btn new-game" @click="running = !running">
+          <button class="btn new-game" @click="startGame()">
             Iniciar Gogo
           </button>
         </template>
