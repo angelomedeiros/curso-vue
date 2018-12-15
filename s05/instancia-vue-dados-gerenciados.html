@@ -1,0 +1,25 @@
+<meta charset="utf-8" />
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app1">
+  {{ titulo }} {{ novaInfo }} <button @click="add">Add</button>
+</div>
+
+<script>
+  const vm = new Vue({
+    el: "#app1",
+    data: {
+      titulo: "Teste 1"
+    },
+    methods: {
+      add() {
+        this.titulo += "!!!";
+      }
+    }
+  });
+
+  vm.novaInfo = "Hello world";
+  // o console abaixo irá exibir o 'Hello world
+  // mas, não será interpolado (na linha 5)
+  console.log(vm.novaInfo);
+</script>
