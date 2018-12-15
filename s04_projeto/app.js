@@ -44,7 +44,6 @@ new Vue({
       return Math.round(value);
     },
     registerHistory(text, cls) {
-      console.log(this.history);
       this.history.unshift({ text, cls });
     }
   },
