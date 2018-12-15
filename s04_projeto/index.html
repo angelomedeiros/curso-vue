@@ -51,7 +51,13 @@
           </button>
         </template>
       </div>
-      <div class="panel logs">4</div>
+      <div class="panel logs" v-if="history.length">
+        <ul>
+          <li v-for="item in history" class="history" :class="item.cls">
+            {{ item.text }}
+          </li>
+        </ul>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
