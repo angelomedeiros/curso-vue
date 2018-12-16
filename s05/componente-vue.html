@@ -1,0 +1,29 @@
+<meta charset="utf-8" />
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+  <comp></comp> <comp></comp> <comp></comp> <comp></comp> <comp></comp>
+  <comp></comp>
+</div>
+
+<script>
+  const template = `<div><h1>{{ titulo }}</h1><button @click="add">Add</button></div>`;
+
+  Vue.component("comp", {
+    template,
+    data: () => {
+      return {
+        titulo: "Teste"
+      };
+    },
+    methods: {
+      add() {
+        this.titulo += "!!!";
+      }
+    }
+  });
+
+  const vm = new Vue({
+    el: "#app"
+  });
+</script>
