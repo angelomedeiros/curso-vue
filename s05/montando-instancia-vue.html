@@ -1,0 +1,41 @@
+<meta charset="utf-8" />
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app"></div>
+
+<script>
+  const vm = new Vue({
+    template: `
+                              <div>
+                                <h1>{{ titulo }}</h1>
+                                <button @click="add">Add</button>
+                              </div>
+                              `,
+    data: {
+      titulo: "Teste"
+    },
+    methods: {
+      add() {
+        this.titulo += "!!!";
+      }
+    }
+  });
+
+  /*
+   *
+   * - Alternativa 0
+   * vm.$mount("#app");
+   *
+   */
+
+  /*
+   *
+   * - Alternativa 1
+   *  O método vazio não causará erro, pois existe a
+   *  propriedade template definida dentro da instância.
+   *
+   */
+
+  vm.$mount(); // Montagem
+  document.querySelector("#app").appendChild(vm.$el); // Injeção dentro da página html
+</script>
