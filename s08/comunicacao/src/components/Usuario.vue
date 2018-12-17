@@ -15,7 +15,8 @@
         @OnChangeName="name = $event"
         :resetNameByCallback="resetName"
       />
-      <app-usuario-editar @OnChangeAge="idade = $event" :idade="idade"/>
+      <!-- <app-usuario-editar @OnChangeAge="idade = $event" :idade="idade"/> -->
+      <app-usuario-editar :idade="idade"/>
     </div>
   </div>
 </template>

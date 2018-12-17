@@ -3,7 +3,7 @@
     <h2>As Informações de Usuário</h2>
     <p>Vários detalhes...</p>
     <p>{{ reverseName() }}</p>
-    <p>Idade: {{idade}}</p>
+    <p>Idade: {{idadeData}}</p>
 
     <button @click="resetName">Reset</button>
     <button @click="resetNameByCallback()">Reset by callback</button>
@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import barramento from "@/barramento";
+
 export default {
   //   props: ["name"],
   props: {
@@ -27,6 +29,11 @@ export default {
     resetNameByCallback: Function,
     idade: Number
   },
+  data() {
+    return {
+      idadeData: this.idade
+    };
+  },
   methods: {
     reverseName() {
       return this.name
@@ -37,6 +44,11 @@ export default {
     resetName() {
       this.$emit("OnChangeName", "Angelo");
     }
+  },
+  created() {
+    barramento.$on("OnChangeAge", idade => {
+      this.idadeData = idade;
+    });
   }
 };
 </script>
