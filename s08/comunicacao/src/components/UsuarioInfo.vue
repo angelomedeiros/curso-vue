@@ -2,13 +2,39 @@
   <div class="componente">
     <h2>As Informações de Usuário</h2>
     <p>Vários detalhes...</p>
-    <p>{{ nome }}</p>
+    <p>{{ reverseName() }}</p>
+    <button @click="resetName">Reset</button>
+    <button @click="resetNameByCallback()">Reset by callback</button>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["nome"]
+  //   props: ["name"],
+  props: {
+    name: {
+      type: String,
+      required: true
+      //   default: 'Zé',
+      //   default() {
+      //     return Array(10)
+      //       .fill(0)
+      //       .join(",");
+      //   }
+    },
+    resetNameByCallback: Function
+  },
+  methods: {
+    reverseName() {
+      return this.name
+        .split("")
+        .reverse()
+        .join("");
+    },
+    resetName() {
+      this.$emit("OnChangeName", "Angelo");
+    }
+  }
 };
 </script>
 

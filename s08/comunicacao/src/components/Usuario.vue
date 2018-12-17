@@ -2,9 +2,17 @@
   <div class="container">
     <h1>Componente Usuário</h1>
     <p>Esse é um componente muito legal!</p>
+    <div>
+      <p>Nome: {{ name }}</p>
+      <button @click="changeName">Change</button>
+    </div>
     <hr>
     <div class="componentes">
-      <app-usuario-info :nome="nome"/>
+      <app-usuario-info
+        :name="name"
+        @OnChangeName="name = $event"
+        :resetNameByCallback="resetName"
+      />
       <app-usuario-editar/>
     </div>
   </div>
@@ -18,8 +26,16 @@ export default {
   components: { AppUsuarioInfo, AppUsuarioEditar },
   data() {
     return {
-      nome: "Angelo"
+      name: "Angelo"
     };
+  },
+  methods: {
+    changeName() {
+      this.name = "Thalita";
+    },
+    resetName() {
+      this.name = "Angelo";
+    }
   }
 };
 </script>
