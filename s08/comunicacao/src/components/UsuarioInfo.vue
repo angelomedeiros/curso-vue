@@ -3,6 +3,8 @@
     <h2>As Informações de Usuário</h2>
     <p>Vários detalhes...</p>
     <p>{{ reverseName() }}</p>
+    <p>Idade: {{idade}}</p>
+
     <button @click="resetName">Reset</button>
     <button @click="resetNameByCallback()">Reset by callback</button>
   </div>
@@ -22,7 +24,8 @@ export default {
       //       .join(",");
       //   }
     },
-    resetNameByCallback: Function
+    resetNameByCallback: Function,
+    idade: Number
   },
   methods: {
     reverseName() {
