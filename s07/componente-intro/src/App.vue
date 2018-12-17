@@ -16,8 +16,12 @@ export default {
 };
 </script>
 
-<style>
-#app {
+
+<style scoped>
+/* O atributo scoped é aplicado no elemento e nos seus filhos.
+importante: Exclusivamente nos filhos, e não nos filhos dos filhos */
+
+div {
   display: flex;
   flex-direction: column;
   justify-content: center;
