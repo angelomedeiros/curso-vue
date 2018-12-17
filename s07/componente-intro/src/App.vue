@@ -1,16 +1,13 @@
 <template>
   <div id="app">
     <h1>Counter</h1>
-    <counter/>
-    <counter/>
-    <counter/>
-    <counter/>
-    <counter/>
+    <counter v-for="a in 8" :key="a"/>
   </div>
 </template>
 
 <script>
-import counter from "./components/Counter.vue";
+// import counter from "./components/Counter.vue";
+import counter from "@/components/Counter.vue";
 
 export default {
   components: {
