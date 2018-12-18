@@ -3,6 +3,7 @@
     <slot name="autor"></slot>
     <slot name="fonte"></slot>
     <slot name="texto"></slot>
+    <slot name="teste"/>
   </div>
 </template>
 
