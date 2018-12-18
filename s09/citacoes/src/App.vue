@@ -4,7 +4,9 @@
       <button @click="componente = 'Citacoes'">Change to quotes</button>
       <button @click="componente = 'Sobre'">Change to about</button>
     </span>
-    <component :is="componente"/>
+    <keep-alive>
+      <component :is="componente"/>
+    </keep-alive>
     <!-- <component :is="'Citacoes'"/> -->
     <!-- <Citacoes />
     <Sobre />-->
