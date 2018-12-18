@@ -4,6 +4,8 @@
       <button @click="componente = 'Citacoes'">Change to quotes</button>
       <button @click="componente = 'Sobre'">Change to about</button>
     </span>
+    <!-- o keep-alive permite utilizar os métodos de activeted e deactived, esses métodos são
+    análogos ao created e destroyed, respectivamente-->
     <keep-alive>
       <component :is="componente"/>
     </keep-alive>
