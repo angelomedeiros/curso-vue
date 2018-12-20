@@ -1,0 +1,21 @@
+div {
+  border: solid 5px purple;
+  font-size: 40px;
+  margin: 5px;
+}
+
+.big {
+  font-size: 1.8em;
+}
+
+.flex-container {
+  background-color: aqua;
+  display: flex;
+  width: 50%;
+  height: 400px;
+  flex-wrap: wrap-reverse;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  align-content: center;
+}
