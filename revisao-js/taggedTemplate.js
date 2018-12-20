@@ -1,11 +1,12 @@
 /*
- * partes = partes da string
- * valores = parâmetros passados na template string
+ * partes = partes da string, Array
+ * valores = parâmetros passados na template string, Array
  */
 function money(partes, ...valores) {
   const resultado = [];
   valores.forEach((valor, indice) => {
     valor = isNaN(valor) ? valor : `R$${valor.toFixed(2)}`;
+    // Para montar a string é preciso alternar entre uma parte e um valor
     resultado.push(partes[indice], valor);
   });
   return resultado.join("");
