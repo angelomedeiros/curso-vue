@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1.4rem;
+}
+
+/* :root {--color-main: brown;
+--color-header: blueviolet;
+--color-footer: darkcyan;
+--color-nav: orangered;
+} */
+
+.tag {
+  border: 1px solid;
+  /* margin: 5px; */
+}
+
+.tag span {
+  font-size: 0.6rem;
+  /* Equivalente =>  float: left;  */
+  vertical-align: top;
+  margin-right: 3px;
+  padding-right: 2px;
+  color: white;
+}
+
+/* Main */
+
+/* main {
+  border: 1px solid var(--color-main);
+}
+
+main span {
+  color: white;
+  background-color: var(--color-main);
+} */
+
+/* Header */
+
+/* header {
+  border: 1px solid var(--color-header);
+}
+
+header span {
+  color: white;
+  background-color: var(--color-header);
+} */
+
+/* Footer */
+
+/* footer {
+  border: 1px solid var(--color-footer);
+}
+
+footer span {
+  color: white;
+  background-color: var(--color-footer);
+} */
+
+/* Nav */
+
+/* nav {
+  border: 1px solid var(--color-nav);
+}
+
+nav span {
+  color: white;
+  background-color: var(--color-nav);
+} */
+
+header {
+  grid-area: cabecalho;
+}
+
+nav {
+  grid-area: navegacao;
+}
+
+main {
+  grid-area: conteudo;
+}
+
+footer {
+  grid-area: rodape;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 30vw 1fr;
+  grid-template-rows: 10vh 1fr 10vh;
+  grid-template-areas: "cabecalho cabecalho" "navegacao conteudo" "rodape rodape";
+}
+
+@media (max-width: 700px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh 1fr 10vh;
+    grid-template-areas: " cabecalho" "conteudo" "rodape";
+  }
+  nav {
+    display: none;
+  }
+}
