@@ -1,16 +1,57 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Selecionar Elementos #01</title>
-    <link rel="stylesheet" href="css/estilo.css">
+  <meta charset="UTF-8" />
+  <title>Selecionar Elementos #01</title>
+  <link rel="stylesheet" href="css/estilo.css" />
+  <style>
+    body {
+      height: 2000px;
+    }
+
+    nav {
+      background-color: purple;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: fixed;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      justify-content: space-between;
+      margin: 10px;
+      padding: 0;
+      width: 30vw;
+    }
+
+    ul li {
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body class="conteudo exercicio">
-    <div id="primeiro">#primeiro</div>
-    <div>Segundo</div>
-    <div class="terceiro ultimo">.terceiro .ultimo</div>
-    <script>              
-        // ...
-    </script>
+  <nav id="scroll">
+    <ul>
+      <li data-scroll="1">1</li>
+      <li data-scroll="2">2</li>
+      <li data-scroll="3">3</li>
+      <li data-scroll="4">4</li>
+      <li data-scroll="5">5</li>
+    </ul>
+  </nav>
+  <div id="primeiro">#primeiro</div>
+  <div>Segundo</div>
+  <div class="terceiro ultimo">.terceiro .ultimo</div>
+  <div id="1">1</div>
+  <div id="2">2</div>
+  <div id="3">3</div>
+  <div id="4">4</div>
+  <div id="5">5</div>
+  <script src="./js/scroll.js"></script>
 </body>
+
 </html>
