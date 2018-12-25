@@ -18,6 +18,11 @@
       position: fixed;
     }
 
+    /* Testando o seletor de primeiro elemento adjacente */
+    nav+* {
+      background-color: aqua !important
+    }
+
     ul {
       display: flex;
       list-style: none;
@@ -34,6 +39,8 @@
 </head>
 
 <body class="conteudo exercicio">
+  <div id="primeiro">#primeiro</div>
+  <div>Segundo</div>
   <nav id="scroll">
     <ul>
       <li data-scroll="1">1</li>
@@ -43,8 +50,6 @@
       <li data-scroll="5">5</li>
     </ul>
   </nav>
-  <div id="primeiro">#primeiro</div>
-  <div>Segundo</div>
   <div class="terceiro ultimo">.terceiro .ultimo</div>
   <div id="1">1</div>
   <div id="2">2</div>
